@@ -1,13 +1,13 @@
 # Getting started developing on top of vLLM
 
 > [!NOTE]  
-> Scripts referred throughout this guide are available at https://github.com/seungrokj/ai_sprint_paris/blob/main/scripts.
+> Scripts referred throughout this guide are available at https://github.com/danielhua23/ai_sprint_shanghai/blob/main/scripts.
 
 First, clone the repo
 
 ```sh
-git clone https://github.com/seungrokj/ai_sprint_paris
-cd ai_sprint_paris/scripts
+git clone https://github.com/danielhua23/ai_sprint_shanghai
+cd ai_sprint_shanghai/scripts
 ```
 
 ## Clone vLLM for local development in the devcloud VM
@@ -18,19 +18,19 @@ git clone https://github.com/vllm-project/vllm.git
 
 ## Start the vLLM development and evaluation docker container
 
-This script will [start a docker container](https://github.com/seungrokj/ai_sprint_paris/blob/main/scripts/0_container.sh) with vllm pre-installed. The container runs the image `rocm/vllm-dev:nightly_0610_rc2_0610_rc2_20250605`.
+This script will [start a docker container](https://github.com/danielhua23/ai_sprint_shanghai/blob/main/scripts/0_container.sh) with vllm pre-installed. The container runs the image `rocm/vllm-dev:nightly_0610_rc2_0610_rc2_20250605`.
 
 ```sh
 ./0_container.sh
 ```
 
-Once the docker container is started, you should should see the scripts from https://github.com/seungrokj/ai_sprint_paris/blob/main/scripts mounted into the container at `/workspace`.
+Once the docker container is started, you should should see the scripts from https://github.com/danielhua23/ai_sprint_shanghai/blob/main/scripts mounted into the container at `/workspace`.
 
 ## Install your vLLM local version instead of the provided reference in the docker container
 
 The vLLM docker container already has a reference `vllm` installed, which is used as a baseline for evaluation. However, it is not practical to modify it locally.
 
-Thus, the vLLM docker container launch script provided at https://github.com/seungrokj/ai_sprint_paris/blob/main/scripts/0_container.sh mounts a local `${PWD}/vllm` into `/vllm-dev` in the container (`-v ${PWD}/vllm:/vllm-dev`). This is to ease development e.g. through remote VS Code usage.
+Thus, the vLLM docker container launch script provided at https://github.com/danielhua23/ai_sprint_shanghai/blob/main/scripts/0_container.sh mounts a local `${PWD}/vllm` into `/vllm-dev` in the container (`-v ${PWD}/vllm:/vllm-dev`). This is to ease development e.g. through remote VS Code usage.
 
 Once in the container, you can run
 
@@ -57,7 +57,7 @@ pip freeze | grep triton
 
 Depending on which code path gets executed on vLLM, some of these dependencies may be used. There may be room for optimization in these dependencies as well.
 
-In this case, a recommended approach could be to clone locally these dependencies into the same repository where vLLM was cloned, and they will be [mounted into `/workspace` in the vllm docker container](https://github.com/seungrokj/ai_sprint_paris/blob/027dac71381d4d807dd2239f83bd21b74385aeef/scripts/0_container.sh#L43) (`-v "$PWD":/workspace`).
+In this case, a recommended approach could be to clone locally these dependencies into the same repository where vLLM was cloned, and they will be [mounted into `/workspace` in the vllm docker container](https://github.com/danielhua23/ai_sprint_shanghai/blob/main/scripts/0_container.sh#L43) (`-v "$PWD":/workspace`).
 
 ## VS Code usage
 
@@ -90,7 +90,7 @@ Host hackathon
 ## Now navigate to the next section
 
 Now you can check model performance, accuracy, profiling, and how to use HF leaderboard
-🏃‍➡️ [hackathon_start](https://github.com/seungrokj/ai_sprint_paris/tree/main/hackathon_guides/2_perf_accuracy_profile_vllm)
+🏃‍➡️ [hackathon_start](https://github.com/danielhua23/ai_sprint_shanghai/tree/main/hackathon_guides/2_perf_accuracy_profile_vllm)
 
 ## 📌 Cleaning up vLLM install
 

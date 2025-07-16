@@ -7,10 +7,10 @@
 # ./1_bench.sh submit <team_name> (runs accuracy + perf + submits to leaderboard)
 
 mkdir -p results
-export MODEL="amd/Mixtral-8x7B-Instruct-v0.1-FP8-KV"
+export MODEL="deepseek-ai/DeepSeek-R1-Distill-Qwen-32B"
 export VLLM_TORCH_PROFILER_DIR=./profile
 
-LB_URL="https://siro1-amd-leaderboard.hf.space"
+LB_URL="https://daniehua-leaderboard.hf.space"
 
 # Check team name for submit mode
 if [ $1 == "submit" ]; then

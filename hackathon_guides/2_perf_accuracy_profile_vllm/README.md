@@ -1,11 +1,11 @@
 # Running vllm online serving benchmark
 
 > [!NOTE]  
-> Scripts referred throughout this guide are available at https://github.com/seungrokj/ai_sprint_paris/blob/main/scripts.
+> Scripts referred throughout this guide are available at https://github.com/danielhua23/ai_sprint_shanghai/blob/main/scripts.
 
 ## First, remove the existing vLLM and reinstall the upstream vllm to the local folder in the container
 
-First thing first, refer to the vllm local installation flow at [install local vllm](https://github.com/seungrokj/ai_sprint_paris/tree/main/hackathon_guides/1_developing_vllm)
+First thing first, refer to the vllm local installation flow at [install local vllm](https://github.com/danielhua23/ai_sprint_shanghai/tree/main/hackathon_guides/1_developing_vllm)
 
 Once you successfully installed the latest vllm, you can find you local vllm version is greater than **0.9.2**
 ```sh
@@ -151,7 +151,7 @@ To analyze results, one can run:
 rocprofiler-compute analyze -p workloads/your_name/MI300/
 ```
 
-This command displays profile results directly in the command line, you can see [an example of profile analysis here](https://github.com/seungrokj/ai_sprint_paris/blob/main/hackathon_guides/2_perf_accuracy_profile_vllm/assets/example_rocprof_compute_metrics.txt).
+This command displays profile results directly in the command line, you can see [an example of profile analysis here](https://github.com/danielhua23/ai_sprint_shanghai/blob/main/hackathon_guides/2_perf_accuracy_profile_vllm/assets/example_rocprof_compute_metrics.txt).
 
 
 > [!TIP]
