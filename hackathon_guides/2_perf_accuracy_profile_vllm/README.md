@@ -18,10 +18,10 @@ vllm                                     0.9.2.dev321+g8fe7fc863.rocm641 /vllm-d
 
 We recommend you to use multiple terminals (or termux, or equivalent) `ssh`ed into your MI300 VM.
 
-Once logged into the VM and once vLLM container is started (previous step), you can run:
+Once logged into the VM and once vLLM container is started (previous step), if you are going to open another terminal, you can run:
 
 ```bash
-docker exec -it vllm-container /bin/bash
+docker exec -it previous_launch_vllm_container_name /bin/bash
 ```
 to log interactively into the running container in an other shell.
 
@@ -58,13 +58,13 @@ result_Jun26_10_34_48.json
 | --------------| --------------| -------------| --------------| ----------------------|
 | 0| 0| 0| 0| 0|
 
-2. Accuracy (word_perplexity) Compare PPL against [Official PPL score](https://huggingface.co/amd/Mixtral-8x7B-Instruct-v0.1-FP8-KV#evaluation-scores)
+2. Accuracy (word_perplexity)
 
 | Tasks  |Version|Filter|n-shot|    Metric     |   |Value |   |Stderr|
 |--------|------:|------|-----:|---------------|---|-----:|---|------|
-|wikitext|      2|none  |     0|bits_per_byte  |↓  |0.5400|±  |   N/A|
-|        |       |none  |     0|byte_perplexity|↓  |1.4540|±  |   N/A|
-|        |       |none  |     0|word_perplexity|↓  |4.1378|±  |   N/A|
+|wikitext|      2|none  |     0|bits_per_byte  |↓  |0.6464|±  |   N/A|
+|        |       |none  |     0|byte_perplexity|↓  |1.5652|±  |   N/A|
+|        |       |none  |     0|word_perplexity|↓  |5.4731|±  |   N/A|
 
 
 ### Submit to a leaderboard
@@ -76,7 +76,11 @@ export TEAM_NAME="your_team_name"
 ./1_bench.sh submit
 ```
 This will submit run `perf` and `accuracy` benchmarks, show you the results and submit them to a leaderboard. The leaderboard is hosted 
-as a Huggingface 🤗 space and is available at [https://huggingface.co/spaces/siro1/amd-leaderboard](https://huggingface.co/spaces/siro1/amd-leaderboard).
+as a Huggingface 🤗 space and is available at [https://huggingface.co/spaces/daniehua/leaderboard](https://huggingface.co/spaces/daniehua/leaderboard).
+
+> Note: if you met some troubleshootings like below, that means you should login your huggingface by `huggingface_cli login` and input your huggingface tokens.
+
+![alt text](./assets/image.png)
 
 ### 3) Run profiling (client)
 

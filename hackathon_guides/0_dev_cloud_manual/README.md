@@ -18,8 +18,8 @@ https://amd.digitalocean.com/
 
 ## ⭐Step 3
 - Please add TAGs with your name to easily identify your instance
-- Check out SSH IP
-![DO_3](./assets/DO_3_n.jpg)
+- Check out SSH IP or web console
+![DO_3](./assets/DO_5_n.png)
 
 ## ⭐Step 4: Docker Launch
 - Make sure you selected "vLLM Image" also check if TAGS is correctly applied
@@ -32,4 +32,4 @@ ssh root@YOUR_OP
 - Check out GPU status by "rocm-smi"
 ![DO_4](./assets/DO_4_rocmsmi.jpg)
 
-Now navigate to 🏃‍➡️ [hackathon_start](https://github.com/seungrokj/ai_sprint_paris/tree/main/hackathon_guides/1_developing_vllm)
+Now navigate to 🏃‍➡️ [hackathon_start](https://github.com/danielhua23/ai_sprint_shanghai/tree/main/hackathon_guides/1_developing_vllm)
