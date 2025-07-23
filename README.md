@@ -1,1 +1,1 @@
-# ai_sprint_paris
+# ai_sprint_shanghai
