@@ -4,20 +4,21 @@ This is a jupyter notebook to show how to optimization and run triton kernels on
 
 ## Launch Jupyter Server in Developer Cloud
 
-1. Create GPU Droplet in Developer Cloud
-   Create and activate GPU instance by following steps in AI_SPRINT_SHANGHAI/hackathon_guides/0_dev_cloud_manual. The only difference is this time we will select pytorch image here:
-   ![IMAGE](./assets/create_droplet.png) 
-
-2. Log in Developer Cloud by:
+1. Log in Developer Cloud by:
     ```bash
     ssh root@ip 
     ```
     Pay attention to the information in terminal logs when you log in:
     ![LOG](./assets/developer_login.png)
 
-3. Launch ROCm Pytorch Docker by:
+2. Launch ROCm Pytorch Docker by:
     ```bash
     docker exec –it rocm /bin/bash
+    ```
+
+3. Clone the repo:
+    ```bash
+    git clone https://github.com/danielhua23/ai_sprint_shanghai.git
     ```
 
 4. Launch jupyter server by:
