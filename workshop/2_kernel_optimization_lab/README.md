@@ -13,4 +13,4 @@ Create and activate GPU instance by following steps in [AI_SPRINT_SHANGHAI/hacka
 Learn how to develop triton kernels by following examples in 0_triton_examples.
 
 ## HIP kernel development
-Learn how to develop HIP kernels by following examples in 1_HIP_reduce_examples.
+Learn how to develop HIP kernels by following examples in 1_HIP_examples.
