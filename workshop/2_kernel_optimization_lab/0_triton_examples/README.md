@@ -4,6 +4,10 @@ This is a jupyter notebook to show how to optimization and run triton kernels on
 
 ## Launch Jupyter Server in Developer Cloud
 
+<font size=5  color=red>
+**For China Developer Meetup / Workshop event, please open a browser and directly log in with your assigned IP and token. Skip below step 1 ~ 5 !!!**
+</font>
+
 1. Log in Developer Cloud by:
     ```bash
     ssh root@ip 
@@ -25,7 +29,7 @@ This is a jupyter notebook to show how to optimization and run triton kernels on
     ```bash
     jupyter server 
     ```
-5. Copy and paste the address (for example: http://xxx.xxx.xxx.xxx, you can find ip in logger info when you log in developer cloud)，then input the requested token (you can also find token in logger info when you log in developer cloud)
+5. Copy and paste the address (for example: http://129.212.188.211, you can find ip in logger info in step 1)，then input the requested token (you can also find token in logger info in step 1)
 
 ## Follow the steps in notebook
 Go through the steps in triton_kernel_workshop.ipynb
