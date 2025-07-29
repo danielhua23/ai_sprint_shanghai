@@ -18,7 +18,7 @@ git clone https://github.com/vllm-project/vllm.git
 
 ## Start the vLLM development and evaluation docker container
 
-This script will [start a docker container](https://github.com/danielhua23/ai_sprint_shanghai/blob/main/scripts/0_container.sh) with vllm pre-installed. The container runs the image `rocm/vllm-dev:nightly_0610_rc2_0610_rc2_20250605`.
+This script will [start a docker container](https://github.com/danielhua23/ai_sprint_shanghai/blob/main/scripts/0_container.sh) with vllm pre-installed. The container runs the image `rocm/vllm:rocm6.4.1_vllm_0.9.1_20250715`.
 
 ```sh
 ./0_container.sh
@@ -35,12 +35,13 @@ Thus, the vLLM docker container launch script provided at https://github.com/dan
 Once in the container, you can run
 
 ```bash
-pip uninstall vllm -y
 cd /vllm-dev
 python setup.py develop
 ```
 
 to install your editable vLLM version. Modifications done from the VM on vLLM's Python source code will then be immediately be visible in the container, and when rerunning `vllm serve`, or `1_bench.sh` and `2_profile` scripts.
+
+> Note: if you have already run setup.py to install vllm, and want to reinstall it to enable your C++ code changes, remember to remove `build` and `vllm.egg-info` under vllm root dir, then run `python setup.py clean`
 
 ## Available ROCm dependencies
 
