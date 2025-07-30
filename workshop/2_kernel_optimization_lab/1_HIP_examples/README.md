@@ -18,6 +18,10 @@ Install the ROCm compute profiler by running this scripts:
 cd /app/ai_sprint_shanghai/workshop/2_kernel_optimization_lab/1_HIP_examples/
 ./scripts/rocprof_compute_tool_setup.sh
 ```
+After installation, activate the virtual environment:
+```bash
+source rocprof_env/bin/activate
+```
 
 ### Manual Installation
 Install the ROCm compute profiler manually by below steps:
