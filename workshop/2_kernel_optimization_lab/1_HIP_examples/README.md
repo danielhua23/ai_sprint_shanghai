@@ -7,8 +7,10 @@ This is a collection of HIP example codes of parallel reduce. You can build and 
    ![OPEN_TERMINAL_IN_NB_0](./assets/activate_terminal_in_nb_0.png)
 2. Double click the black Terminal icon:
    ![OPEN_TERMINAL_IN_NB_1](./assets/activate_terminal_in_nb_1.png)
+3. The terminal opened will look like:
+   ![OPEN_TERMINAL_IN_NB_2](./assets/activate_terminal_in_nb_2.png)
 
-
+We will use this terminal to do all the following work.
 
 ## ROCm Compute Profiler Installation (Optional)
 
@@ -62,51 +64,87 @@ Install the ROCm compute profiler manually by below steps:
 
    ![LOCALE_INSTALLATION_VERIFY](./assets/locale_install_verify.png)
 
-## Build
-Enter into any subfolders of `benchmark/` and build the executable, for example:
+## Build and Run
 
+### Build and Benchmark reduce_v0 Kernel
+Enter into `benchmark/reduce_v0/`, build the executable and run benchmark, by:
 ```console
-cd benchmark/reduce_v0/
+cd /app/ai_sprint_shanghai/workshop/2_kernel_optimization_lab/1_HIP_examples/benchmark/reduce_v0/
 make
-```
-
-## Run
-Enter into any subfolders of `benchmark/` and run the executable, for example:
-
-```console
-cd benchmark/reduce_v0/
 ./reduce_v0
 ```
 
-## Profile
+### Build and Benchmark reduce_v1 Kernel
+Enter into `benchmark/reduce_v1/`, build the executable and run benchmark, by:
+```console
+cd /app/ai_sprint_shanghai/workshop/2_kernel_optimization_lab/1_HIP_examples/benchmark/reduce_v1/
+make
+./reduce_v1
+```
 
-Profiling reduce_v0, by:
+### Build and Benchmark reduce_v2 Kernel
+Enter into `benchmark/reduce_v2/`, build the executable and run benchmark, by:
+```console
+cd /app/ai_sprint_shanghai/workshop/2_kernel_optimization_lab/1_HIP_examples/benchmark/reduce_v2/
+make
+./reduce_v2
+```
+
+### Build and Benchmark reduce_v3 Kernel
+Enter into `benchmark/reduce_v3/`, build the executable and run benchmark, by:
+```console
+cd /app/ai_sprint_shanghai/workshop/2_kernel_optimization_lab/1_HIP_examples/benchmark/reduce_v3/
+make
+./reduce_v3
+```
+
+### Build and Benchmark reduce_v4 Kernel
+Enter into `benchmark/reduce_v4/`, build the executable and run benchmark, by:
+```console
+cd /app/ai_sprint_shanghai/workshop/2_kernel_optimization_lab/1_HIP_examples/benchmark/reduce_v4/
+make
+./reduce_v4
+```
+
+### Build and Benchmark reduce_v5 Kernel
+Enter into `benchmark/reduce_v5/`, build the executable and run benchmark, by:
+```console
+cd /app/ai_sprint_shanghai/workshop/2_kernel_optimization_lab/1_HIP_examples/benchmark/reduce_v5/
+make
+./reduce_v5
+```
+
+## Profile and Comparation
+
+Profiling reduce_v3, by:
 ```bash
 cd /app/ai_sprint_shanghai/workshop/2_kernel_optimization_lab/1_HIP_examples/benchmark/
 
-/app/ai_sprint_shanghai/workshop/2_kernel_optimization_lab/1_HIP_examples/rocprofiler-compute-3.1.0/src/rocprof-compute profile -n reduce_v0_data -- ./reduce_v0/reduce_v0
+/app/ai_sprint_shanghai/workshop/2_kernel_optimization_lab/1_HIP_examples/rocprofiler-compute-3.1.0/src/rocprof-compute profile -n reduce_v3_data -- ./reduce_v3/reduce_v3
 ```
 
-Analyze reduce_v0, by:
+Analyze reduce_v3, by:
 ```bash
-/app/ai_sprint_shanghai/workshop/2_kernel_optimization_lab/1_HIP_examples/rocprofiler-compute-3.1.0/src/rocprof-compute analyze -p workloads/reduce_v0_data/MI300/ -o reduce_v0_profile.log
+/app/ai_sprint_shanghai/workshop/2_kernel_optimization_lab/1_HIP_examples/rocprofiler-compute-3.1.0/src/rocprof-compute analyze -p workloads/reduce_v3_data/MI300/ -o reduce_v3_profile.log
 ```
 
-Profiling reduce_v1, by:
-```bash
-cd /app/ai_sprint_shanghai/workshop/2_kernel_optimization_lab/1_HIP_examples/benchmark/
+The above command will conduct analysis of reduce_v3's metrics data and the output will be dumped into reduce_v3_profile.log
 
-/app/ai_sprint_shanghai/workshop/2_kernel_optimization_lab/1_HIP_examples/rocprofiler-compute-3.1.0/src/rocprof-compute profile -n reduce_v1_data -- ./reduce_v1/reduce_v1
-```
-
-Compare reduce_v0's and reduce_v1's profile data, by:
+Profiling reduce_v4, by:
 ```bash
 cd /app/ai_sprint_shanghai/workshop/2_kernel_optimization_lab/1_HIP_examples/benchmark/
 
-/app/ai_sprint_shanghai/workshop/2_kernel_optimization_lab/1_HIP_examples/rocprofiler-compute-3.1.0/src/rocprof-compute analyze -p workloads/reduce_v0_data/MI300/ -p workloads/reduce_v1_data/MI300/ | tee reduce_v0_v1_compare.log
+/app/ai_sprint_shanghai/workshop/2_kernel_optimization_lab/1_HIP_examples/rocprofiler-compute-3.1.0/src/rocprof-compute profile -n reduce_v4_data -- ./reduce_v4/reduce_v4
 ```
 
-The profiled metrics data can be find in output log file reduce_v0_profile.log
+Compare reduce_v3's profile data with reduce_v4's, by:
+```bash
+cd /app/ai_sprint_shanghai/workshop/2_kernel_optimization_lab/1_HIP_examples/benchmark/
+
+/app/ai_sprint_shanghai/workshop/2_kernel_optimization_lab/1_HIP_examples/rocprofiler-compute-3.1.0/src/rocprof-compute analyze -p workloads/reduce_v3_data/MI300/ -p workloads/reduce_v4_data/MI300/ | tee reduce_v3_v4_compare.log
+```
+
+The comparation analysis result can be find in output log file reduce_v3_v4_compare.log.
 
 ## Reference
 1. https://rocm.docs.amd.com/projects/HIP/en/latest/tutorial/reduction.html#
