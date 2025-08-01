@@ -5,7 +5,7 @@ This is a collection of HIP example codes of parallel reduce. You can build and 
 ## Open a Terminal in Jupyterlab
 1. Click "+" icon to open a terminal:
    ![OPEN_TERMINAL_IN_NB_0](./assets/activate_terminal_in_nb_0.png)
-2. Double click the black Terminal icon:
+2. Click the black Terminal icon:
    ![OPEN_TERMINAL_IN_NB_1](./assets/activate_terminal_in_nb_1.png)
 3. The terminal opened will look like:
    ![OPEN_TERMINAL_IN_NB_2](./assets/activate_terminal_in_nb_2.png)
