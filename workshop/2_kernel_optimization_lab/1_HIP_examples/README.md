@@ -14,6 +14,8 @@ We will use this terminal to do all the following work.
 
 ## ROCm Compute Profiler Installation (Optional)
 
+It is recommended to install the profiler using a script.
+
 ### Installation by script (RECOMMENDED)
 Install the ROCm compute profiler by running this scripts:
 ```bash
