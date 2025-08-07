@@ -19,11 +19,7 @@ export PATH_TO_KERNEL_FILE="your_generated_kernel_file"
 ./1_bench.sh perf
 ```
 
-where `PATH_TO_KERNEL_FILE` is the `output_file` used to store kernels agent generated, which is specified in the config file by default. 
-
-`NAME_OF_OUTPUT_FILE` is prefix of output file name, results will store in `PATH_TO_FOLDER_OR_FILE` dir
-
-for example, ```tb_eval -f /hackathon-agent/outputs/_1.json -o out -ds tbg```
+where `PATH_TO_KERNEL_FILE` is the `output_file` used to store kernels agent generated, which is specified in the config file by default. for example, `/hackathon-agent/outputs/reflexion_oneshot_rocm_1.json` where `1` in the cmd means you are benchmarking the 1st iter result.
 
 ## Submit to leaderboard
 
