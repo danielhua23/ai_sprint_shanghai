@@ -35,3 +35,35 @@ export PATH_TO_FOLDER_OR_FILE="your_generated_kernel_dir"
 
 This will submit run `perf` benchmarks, show you the results and submit them to a leaderboard. The leaderboard is hosted 
 as a Huggingface 🤗 space and is available at [https://huggingface.co/spaces/daniehua/track1_leaderboard](https://huggingface.co/spaces/daniehua/track1_leaderboard).
+
+## submit your code to repo for review
+
+before deadline, you must submit your modification to repo by creating a Pull Requests, following below steps
+
+* step1: using git status see the files you changed
+
+```bash
+git status
+```
+
+* step2: using git add to pick what you submit
+
+```bash
+git add files_you_will_submit
+```
+
+* step3: using git commit to submit, **note the info is your team name** which keep same as the name you submit to leaderboard
+
+```bash
+git commit -m "your_team_name"
+```
+
+* step4: using git push to push to remote
+
+```bash
+git push
+```
+
+* step5: create a Pull Request
+
+Now, once you run `git push` successfully, you will see the create pull request button at the main page of repo, click it to submit a Pull Request
