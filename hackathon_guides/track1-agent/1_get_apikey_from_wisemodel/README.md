@@ -18,6 +18,6 @@ https://wisemodel.cn/AImarket
 
 # API key所在位置
 
-点击右上角的头像，进入用户中心，点击Token与key，并可视乎API key后，即可显示API key
+点击右上角的头像，进入用户中心，点击Token与key和API key后，即可显示API key
 
-![alt text](./assets/image3.png)
+![alt text](./assets/image4.png)
