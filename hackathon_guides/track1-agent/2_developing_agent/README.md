@@ -57,6 +57,11 @@ Once in the container, you can run the kernel agent by below steps
    python main_reflexion_oneshot.py
    ```
 
+while the kernel is generating, you will see the info like below picture
+
+<img width="1140" height="761" alt="image" src="https://github.com/user-attachments/assets/eb1ca954-20ae-4497-8ec2-2f95c0891e4b" />
+
+
 ## VS Code usage
 
 If you would like to use VS Code for remote development, refer to: https://code.visualstudio.com/docs/remote/ssh. You may need to install the [Remote - SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) extension, and attach VS Code to the VM with:
