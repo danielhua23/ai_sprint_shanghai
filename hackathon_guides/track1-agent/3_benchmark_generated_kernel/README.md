@@ -9,9 +9,9 @@
 pip install geak-eval
 ```
 
-## Run benchmark(Optional)
+## Run benchmark
 
-**I suggest run benchmark first and then submit results by next section**
+**I suggest run benchmark first and then submit results in next section**
 
 ```bash
 cd /workspace
