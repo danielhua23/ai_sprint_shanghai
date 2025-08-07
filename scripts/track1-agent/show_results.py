@@ -24,5 +24,8 @@ with rpt_file.open(encoding="utf-8") as f:
 # -------------------- 3. 取出 speedup 列表 -----------
 speedups = data.get("speedup", [])
 
+total_speedups = sum(speedups)
+
 # -------------------- 4. 一行打印 --------------------
-print(f", ".join(map(str, speedups)))
+# print(f", ".join(map(str, speedups)))
+print(f"{total_speedups}")

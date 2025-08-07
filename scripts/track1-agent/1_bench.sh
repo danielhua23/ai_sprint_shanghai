@@ -1,8 +1,23 @@
 #Usage:
-# ./1_bench.sh perf
+# ./1_bench.sh perf <iteration id>
 # ./1_bench.sh submit <team_name> (runs perf + submits to leaderboard)
 
 LB_URL="https://daniehua-leaderboard.hf.space"
+
+# Check iter id for perf mode
+if [ $1 == "perf" ] || [ $1 == "submit" ]; then
+    if [ ! -z "$2" ]; then
+        ITER="$2"
+    elif [ ! -z "$ITER" ]; then
+        ITER="$ITER"
+    else
+        echo "ERROR: iteration id required for perf mode"
+        echo "Usage: ./1_bench.sh perf <iteration id>"
+        echo "Or set ITER environment variable"
+        exit 1
+    fi
+    echo "INFO: benching iteration: $ITER"
+fi
 
 # Check team name for submit mode
 if [ $1 == "submit" ]; then
@@ -37,13 +52,21 @@ if [ $1 == "perf" ] || [ $1 == "submit" ]; then
 
     geak-eval -f $(PATH_TO_KERNEL_FILE) -o output_perf -ds tbg
 
-    PERF_OUTPUT=$(python show_results.py)
+    PERF_OUTPUT=$(python show_results.py --iter $ITER)
     echo "$PERF_OUTPUT"
 fi
 
 
 
 if [ $1 == "submit" ]; then
+    # if [ ! -z "$PERF_OUTPUT" ]; then
+    #     PERF_OUTPUT="$PERF_OUTPUT"
+    # else
+    #     echo "ERROR: perf mode required before submit mode"
+    #     echo "Usage: 1. ./1_bench.sh perf <iteration id> 2. ./1_bench.sh submit <team_name>"
+    #     exit 1
+    # fi
+
     echo "INFO: Submitting results for team: $TEAM_NAME"
 
     PERF_LINE=$(echo "$PERF_OUTPUT" | grep -E "[0-9]+\.[0-9]+.*,[[:space:]]*[0-9]+\.[0-9]+" | tail -1)

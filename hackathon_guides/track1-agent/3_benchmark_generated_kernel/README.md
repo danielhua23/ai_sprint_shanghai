@@ -16,10 +16,10 @@ pip install geak-eval
 ```bash
 cd /workspace
 export PATH_TO_KERNEL_FILE="your_generated_kernel_file"
-./1_bench.sh perf
+./1_bench.sh perf iteration_id
 ```
-
-where `PATH_TO_KERNEL_FILE` is the `output_file` used to store kernels agent generated, which is specified in the config file by default. for example, `/hackathon-agent/outputs/reflexion_oneshot_rocm_1.json` where `1` in the cmd means you are benchmarking the 1st iter result.
+* `iteration_id` is the id you wanna test perf, since you will generate kernels in every iteration, usually, the bigger id is, the perf is better.
+* `PATH_TO_KERNEL_FILE` is the `output_file` used to store kernels agent generated, which is specified in the config file by default. for example, `/hackathon-agent/outputs/reflexion_oneshot_rocm_1.json` where `1` in the cmd means you are benchmarking the 1st iter result.
 
 when the benchmark performance done, by default, you can find a folder named `/hackathon-agent/outputs/reflexion_oneshot_rocm_1` which include some files and folders like below
 
@@ -54,7 +54,10 @@ before deadline, you must submit your modification to repo by creating a Pull Re
 git status
 ```
 
-* step2: using git add to pick what you submit
+* step2: using git add to pick your files for our review
+    * agent code 
+    * outputs folder like `/hackathon-agent/outputs/reflexion_oneshot_rocm_5.json` including generated kernels whose performance is the best. 
+    * performance file, like `out.json_perf_0.json`
 
 ```bash
 git add files_you_will_submit
