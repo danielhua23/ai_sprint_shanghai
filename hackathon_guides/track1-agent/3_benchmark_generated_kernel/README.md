@@ -11,7 +11,7 @@ pip install geak-eval
 
 ## Run benchmark(Optional)
 
-you can skip this section if you want to run benchmark and submit results together, and go to next section
+**I suggest run benchmark first and then submit results by next section**
 
 ```bash
 cd /workspace
@@ -21,6 +21,18 @@ export PATH_TO_KERNEL_FILE="your_generated_kernel_file"
 
 where `PATH_TO_KERNEL_FILE` is the `output_file` used to store kernels agent generated, which is specified in the config file by default. for example, `/hackathon-agent/outputs/reflexion_oneshot_rocm_1.json` where `1` in the cmd means you are benchmarking the 1st iter result.
 
+when the benchmark performance done, by default, you can find a folder named `/hackathon-agent/outputs/reflexion_oneshot_rocm_1` which include some files and folders like below
+
+<img width="959" height="359" alt="image" src="https://github.com/user-attachments/assets/910a1cf7-f2b0-4090-9ffa-0ec20b51007e" />
+
+* `exec/perf`: performance result of kernels that pass all the unit tests
+* `exec/rocm_performance_analysis.txt`: performance analysis of kernels that pass all the unit tests
+* `exec/test*.py`: the unit tests of kernels
+* `out.json and out.json_results_0.json`: detailed test log
+* `out.json_all_passes.json`: precise test log
+* `out.json_perf_0.json`: **performance result**
+* `out.jsonpassk.txt`: ratio that pass all the unit tests
+
 ## Submit to leaderboard
 
 ```bash
@@ -29,7 +41,7 @@ export PATH_TO_FOLDER_OR_FILE="your_generated_kernel_dir"
 ./1_bench.sh submit your_team_name
 ```
 
-This will submit run `perf` benchmarks, show you the results and submit them to a leaderboard. The leaderboard is hosted 
+This will show you the results you get above and submit them to a leaderboard. The leaderboard is hosted 
 as a Huggingface 🤗 space and is available at [https://huggingface.co/spaces/daniehua/track1_leaderboard](https://huggingface.co/spaces/daniehua/track1_leaderboard).
 
 ## submit your code to repo for review
