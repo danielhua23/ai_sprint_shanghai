@@ -2,7 +2,7 @@
 # ./1_bench.sh perf <iteration id>
 # ./1_bench.sh submit <team_name> (runs perf + submits to leaderboard)
 
-LB_URL="https://daniehua-leaderboard.hf.space"
+LB_URL="https://daniehua-track1-agent-leaderboard.hf.space/"
 
 # Check iter id for perf mode
 if [ $1 == "perf" ] || [ $1 == "submit" ]; then

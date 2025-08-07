@@ -42,7 +42,7 @@ export PATH_TO_FOLDER_OR_FILE="your_generated_kernel_dir"
 ```
 
 This will show you the results you get above and submit them to a leaderboard. The leaderboard is hosted 
-as a Huggingface 🤗 space and is available at [https://huggingface.co/spaces/daniehua/track1_leaderboard](https://huggingface.co/spaces/daniehua/track1_leaderboard).
+as a Huggingface 🤗 space and is available at [https://daniehua-track1-agent-leaderboard.hf.space/](https://daniehua-track1-agent-leaderboard.hf.space/).
 
 ## submit your code to repo for review
 
