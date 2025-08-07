@@ -30,9 +30,15 @@ Once the docker container is started, you should should see the scripts from htt
 the docker container launch script provided at https://github.com/danielhua23/ai_sprint_shanghai/blob/main/scripts/0_container.sh mounts a local `${PWD}/hackathon-agent` into `/hackathon-agent` in the container. This is to ease development e.g. through remote VS Code usage.
 
 Once in the container, you can run the kernel agent by below steps
-1. prepare the environment
+
+0. check in a new branch(important)
    ```
    cd /hackathon-agent
+   git checkout -b your_branch_name
+   ```
+
+1. prepare the environment
+   ```
    python3 -m pip install -r requirements.txt
    ```
 
@@ -50,15 +56,6 @@ Once in the container, you can run the kernel agent by below steps
    ```
    python main_reflexion_oneshot.py
    ```
-
-## Outputs and Resuming from Checkpoints
-
-Result and memories will be stored in the `output_path` specified in the config file for each iteration. You can resume from any iter you want by specifying the `result_file`, `mem_file` and `start_iter` in the config file. For example:
-```
-result_path: "../outputs/optimagent_10.jsonl"
-mem_file: "../outputs/optimagent_mem_10.json"
-start_iter: 11
-```
 
 ## VS Code usage
 
