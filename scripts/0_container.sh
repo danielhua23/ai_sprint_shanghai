@@ -1,7 +1,9 @@
 CONTAINER_NAME="vllm-container"
-DOCKER_IMG="rocm/vllm-dev:nightly_0610_rc2_0610_rc2_20250605"
-
-
+#DOCKER_IMG="rocm/vllm-dev:nightly_0610_rc2_0610_rc2_20250605"
+DOCKER_IMG="rocm/vllm:rocm6.4.1_vllm_0.9.1_20250715"
+#DOCKER_IMG="rocm/vllm-dev:nightly_main_20250728"
+#DOCKER_IMG="rocm/vllm:latest"
+#DOCKER_IMG="rocm/vllm-dev:nightly_0624_rc2_0624_rc2_20250620"
 running_container=$(docker ps -q --filter "name=$CONTAINER_NAME")
 
 if [ $running_container ]; then

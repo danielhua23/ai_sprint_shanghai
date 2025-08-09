@@ -10,9 +10,9 @@ First thing first, refer to the vllm local installation flow at [install local v
 Once you successfully installed the latest vllm, you can find you local vllm version is greater than **0.9.2**
 ```sh
 root@7c35b3b04713:/workspace# pip list | grep vllm
-vllm                                     0.9.2.dev321+g8fe7fc863.rocm641 /vllm-dev
+vllm                                     0.10.1.dev497+g1bf5e1f25.rocm641 /vllm-dev
 ```
-
+> Note: !important. the output vllm version of `pip list | grep vllm` must end with `/vllm-dev`, otherwise, you haven't successfully install your local vllm.
 
 ## After vllm installation, open another terminal (1st terminal: server, 2nd terminal: client)
 

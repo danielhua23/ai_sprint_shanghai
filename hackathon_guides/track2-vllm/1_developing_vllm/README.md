@@ -36,7 +36,17 @@ Once in the container, you can run
 
 ```bash
 cd /vllm-dev
-python setup.py develop
+pip uninstall -y vllm
+pip install --upgrade numba \
+    scipy \
+    huggingface-hub[cli,hf_transfer] \
+    setuptools_scm
+pip install "numpy<2"
+pip install -r requirements/rocm.txt
+
+# Build vLLM for MI GPU
+export PYTORCH_ROCM_ARCH="gfx90a;gfx942"
+python3 setup.py develop
 ```
 
 to install your editable vLLM version. Modifications done from the VM on vLLM's Python source code will then be immediately be visible in the container, and when rerunning `vllm serve`, or `1_bench.sh` and `2_profile` scripts.
