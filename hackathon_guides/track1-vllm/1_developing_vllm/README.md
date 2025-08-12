@@ -55,7 +55,7 @@ to install your editable vLLM version. Modifications done from the VM on vLLM's 
 
 ## Available ROCm dependencies
 
-Some ROCm dependencies are available in the base container `rocm/vllm-dev:nightly_0610_rc2_0610_rc2_20250605` that is provided:
+Some ROCm dependencies are available in the base container `rocm/vllm:rocm6.4.1_vllm_0.9.1_20250715` that is provided:
 
 ```bash
 pip freeze | grep aiter

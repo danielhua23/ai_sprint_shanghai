@@ -5,7 +5,7 @@
 
 ## First, remove the existing vLLM and reinstall the upstream vllm to the local folder in the container
 
-First thing first, refer to the vllm local installation flow at [install local vllm](https://github.com/danielhua23/ai_sprint_shanghai/tree/main/hackathon_guides/1_developing_vllm)
+First thing first, refer to the vllm local installation flow at [install local vllm](https://github.com/danielhua23/ai_sprint_shanghai/tree/main/hackathon_guides/track1-vllm/1_developing_vllm)
 
 Once you successfully installed the latest vllm, you can find you local vllm version is greater than **0.9.2**
 ```sh
@@ -21,7 +21,7 @@ We recommend you to use multiple terminals (or termux, or equivalent) `ssh`ed in
 Once logged into the VM and once vLLM container is started (previous step), if you are going to open another terminal, you can run:
 
 ```bash
-docker exec -it previous_launch_vllm_container_name /bin/bash
+docker exec -it vllm_container /bin/bash
 ```
 to log interactively into the running container in an other shell.
 

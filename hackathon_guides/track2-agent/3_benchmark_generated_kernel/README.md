@@ -1,7 +1,7 @@
 # Running kernel benchmark
 
 > [!NOTE]  
-> Scripts referred throughout this guide are available at https://github.com/danielhua23/ai_sprint_shanghai/blob/main/scripts/track1-agent.
+> Scripts referred throughout this guide are available at https://github.com/danielhua23/ai_sprint_shanghai/blob/main/scripts/track2-agent.
 
 ## Install benchmark tool
 
@@ -16,19 +16,18 @@ pip install geak-eval
 ```bash
 cd /workspace
 export PATH_TO_KERNEL_FILE="your_generated_kernel_file"
-./1_bench.sh perf iteration_id
+./1_bench.sh perf 
 ```
-* `iteration_id` is the id you wanna test perf, since you will generate kernels in every iteration, usually, the bigger id is, the perf is better.
-* `PATH_TO_KERNEL_FILE` is the `output_file` used to store kernels agent generated, which is specified in the config file by default. for example, `/hackathon-agent/outputs/reflexion_oneshot_rocm_1.json` where `1` in the cmd means you are benchmarking the 1st iter result.
+* `PATH_TO_KERNEL_FILE` is the `output_file` used to store kernels agent generated, which is specified in the config file by default. for example, `export PATH_TO_KERNEL_FILE="reflexion_oneshot_tritonbench_1.json" ` where `1` in the cmd means you are benchmarking the 1st iter result. we suggest you input the biggest iteration file
 
-when the benchmark performance done, by default, you can find a folder named `/hackathon-agent/outputs/reflexion_oneshot_rocm_1` which include some files and folders like below
+when the benchmark performance done, **by default, you can find a folder named `reflexion_oneshot_tritonbench_1` which include some files and folders like below**
 
 <img width="959" height="359" alt="image" src="https://github.com/user-attachments/assets/910a1cf7-f2b0-4090-9ffa-0ec20b51007e" />
 
-* `exec/perf`: performance result of kernels that pass all the unit tests
-* `exec/rocm_performance_analysis.txt`: performance analysis of kernels that pass all the unit tests
-* `exec/test*.py`: the unit tests of kernels
-* `out.json and out.json_results_0.json`: detailed test log
+* `exec/gen_perf`: performance result and execution logs of kernels that pass all the unit tests
+* `exec/performance_analysis.txt`: performance analysis of kernels that pass all the unit tests
+* `exec/*.py`: generated kernels
+* `out.json or out.json_results_0.json`: detailed test log
 * `out.json_all_passes.json`: precise test log
 * `out.json_perf_0.json`: **performance result**
 * `out.jsonpassk.txt`: ratio that pass all the unit tests
@@ -37,12 +36,13 @@ when the benchmark performance done, by default, you can find a folder named `/h
 
 ```bash
 cd /workspace
-export PATH_TO_FOLDER_OR_FILE="your_generated_kernel_dir"
+export PATH_TO_KERNEL_FILE="your_generated_kernel_file"
 ./1_bench.sh submit your_team_name
 ```
+**we suggest the `PATH_TO_KERNEL_FILE` should be under `/workspace`**
 
 This will show you the results you get above and submit them to a leaderboard. The leaderboard is hosted 
-as a Huggingface 🤗 space and is available at [https://daniehua-track1-agent-leaderboard.hf.space/](https://daniehua-track1-agent-leaderboard.hf.space/).
+as a Huggingface 🤗 space and is available at [https://daniehua-agent-leaderboard.hf.space/](https://daniehua-agent-leaderboard.hf.space/).
 
 ## submit your code to repo for review
 
@@ -56,8 +56,8 @@ git status
 
 * step2: using git add to pick your files for our review
     * agent code 
-    * outputs folder like `/hackathon-agent/outputs/reflexion_oneshot_rocm_5.json` including generated kernels whose performance is the best. 
-    * performance file, like `out.json_perf_0.json`
+    * outputs folder like `/workspace/reflexion_oneshot_tritonbench_9` including generated kernels whose performance is the best. 
+    * performance file, like `reflexion_oneshot_tritonbench_9_out.json_perf_0.json`
 
 ```bash
 git add files_you_will_submit

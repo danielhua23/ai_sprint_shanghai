@@ -6,24 +6,23 @@ from pathlib import Path
 # -------------------- 1. 命令行参数 --------------------
 parser = argparse.ArgumentParser(description="")
 parser.add_argument(
-    "--iter",
-    type=int,
+    "--path",
+    type=str,
     required=True,
-    help="iter id you wanna submit"
+    help="performance file(.json) should be gave"
 )
 args = parser.parse_args()
 
 # -------------------- 2. 读取 JSON --------------------
 rpt_file = Path(
-    f"/hackathon-agents/outputs/out.json_perf_{args.iter}.json"
+    args.path
 )
 
 with rpt_file.open(encoding="utf-8") as f:
     data = json.load(f)
 
 # -------------------- 3. 取出 speedup 列表 -----------
-speedups = data.get("speedup", [])
-
+speedups = data.get("speed_up", [])
 total_speedups = sum(speedups)
 
 # -------------------- 4. 一行打印 --------------------
