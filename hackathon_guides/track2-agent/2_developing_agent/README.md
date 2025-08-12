@@ -61,7 +61,7 @@ while the kernel is generating, you will see the info like below picture
 
 <img width="1140" height="761" alt="image" src="https://github.com/user-attachments/assets/eb1ca954-20ae-4497-8ec2-2f95c0891e4b" />
 
-and when the program done, by default you will see the output file including generated kernels under `/hackathon_agents/output/` like `reflexion_oneshot_rocm_0.json` where `0` represent the kernels generated in iteration 0
+and when the program done, by default you will see the output file including generated kernels under `/workspace` like `reflexion_oneshot_rocm_0.json` where `0` represent the kernels generated in iteration 0
 
 ## VS Code usage
 
