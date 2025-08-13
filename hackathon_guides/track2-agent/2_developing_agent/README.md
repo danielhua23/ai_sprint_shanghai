@@ -49,7 +49,7 @@ Once in the container, you can run the kernel agent by below steps
 
 3. edit config file. You need to give your API key from [1_get_apikey_from_wisemodel](https://github.com/danielhua23/ai_sprint_shanghai/blob/main/scripts/track2-agent/1_get_apikey_from_wisemodel) and TritonBench data path in your config file.
    ```
-   vi configs/reflexion_oneshot_config.yaml
+   vi configs/tritonbench_oneshot_config.yaml
    ```
    
 4. kernel generation
