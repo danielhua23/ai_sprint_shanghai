@@ -1,5 +1,5 @@
 #Usage:
-# ./1_bench.sh perf <iteration id>
+# ./1_bench.sh perf
 # ./1_bench.sh submit <team_name> (runs perf + submits to leaderboard)
 
 LB_URL="https://daniehua-agent-leaderboard.hf.space"
@@ -67,8 +67,6 @@ if [ $1 == "submit" ]; then
     # SPEEDUP1=${SPEEDUP1:-0.0}
     
     echo "Performance metrics:"
-    # echo "  call acc: ${TTFT}ms"
-    # echo "  exec acc: ${TPOT}ms"
     echo "  speedup for kernels: ${PERF_LINE} times"
     echo "  your total score is: ${PERF_LINE}"
     
