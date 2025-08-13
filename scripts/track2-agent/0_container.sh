@@ -18,7 +18,6 @@ echo "$PWD/.hf_cache -> /root/.cache/huggingface/hub"
 echo "$PWD -> /workspace"
 
 docker run \
-    --rm \
     -it \
     --ipc host \
     --name $CONTAINER_NAME \
