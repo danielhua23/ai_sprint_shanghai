@@ -21,6 +21,8 @@ git clone https://github.com/danielhua23/hackathon-agent
 This script will [start a docker container](https://github.com/danielhua23/ai_sprint_shanghai/blob/main/scripts/track2-agent/0_container.sh) with pytorch pre-installed. The container runs the image `rocm/pytorch:latest`.
 
 ```sh
+chmod +x 0_container.sh
+chmod +x 1_bench.sh
 ./0_container.sh
 ```
 
@@ -47,7 +49,7 @@ Once in the container, you can run the kernel agent by below steps
    cd src
    ```
 
-3. edit config file. You need to give your API key from [1_get_apikey_from_wisemodel](https://github.com/danielhua23/ai_sprint_shanghai/blob/main/scripts/track2-agent/1_get_apikey_from_wisemodel) and TritonBench data path in your config file.
+3. edit config file. You need to give your API key from [1_get_apikey_from_wisemodel](https://github.com/danielhua23/ai_sprint_shanghai/tree/main/hackathon_guides/track2-agent/1_get_apikey_from_wisemodel) into your config file.
    ```
    vi configs/tritonbench_oneshot_config.yaml
    ```
@@ -61,7 +63,7 @@ while the kernel is generating, you will see the info like below picture
 
 <img width="1140" height="761" alt="image" src="https://github.com/user-attachments/assets/eb1ca954-20ae-4497-8ec2-2f95c0891e4b" />
 
-and when the program done, by default you will see the output file including generated kernels under `/workspace` like `reflexion_oneshot_rocm_0.json` where `0` represent the kernels generated in iteration 0
+and when the program done, by default you will see the output files including generated kernels under `/workspace` like `reflexion_oneshot_tritonbench_0.json` where `0` represent the kernels generated in iteration 0
 
 ## VS Code usage
 
