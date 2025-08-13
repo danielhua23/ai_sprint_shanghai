@@ -38,9 +38,9 @@ if [ $1 == "perf" ] || [ $1 == "submit" ]; then
 
     geak-eval -f $(PATH_TO_KERNEL_FILE) -o out.json -ds tbg
     result=${PATH_TO_KERNEL_FILE:0:${#PATH_TO_KERNEL_FILE}-5}
-    suffix1 = "_out.json"
-    suffix2 = "_perf_0.json"
-    perf_file = "${result}${suffix1}${suffix2}" # reflexion_oneshot_tritonbench_9_out.json_perf_0.json
+    suffix1="/out.json"
+    suffix2="_perf_0.json"
+    perf_file="$result$suffix1$suffix2" # reflexion_oneshot_tritonbench_9/out.json_perf_0.json
     PERF_OUTPUT=$(python show_results.py --path $perf_file)
     echo "$PERF_OUTPUT"
 fi
