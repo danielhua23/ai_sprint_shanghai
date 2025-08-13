@@ -21,7 +21,6 @@ echo "$PWD/vllm -> /vllm-dev"
 # PYTORCH_ROCM_ARCH="gfx942" is useful to later restrict kernel compilation only for CDNA3 architecture (MI300),
 # speeding up compilation time.
 docker run \
-    --rm \
     -it \
     --ipc host \
     --name $CONTAINER_NAME \
