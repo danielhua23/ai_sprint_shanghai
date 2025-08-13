@@ -36,7 +36,7 @@ if [ $1 == "perf" ] || [ $1 == "submit" ]; then
     fi
     echo "INFO: benching kernels in $PATH_TO_KERNEL_FILE"
 
-    geak-eval -f $(PATH_TO_KERNEL_FILE) -o out.json -ds tbg
+    geak-eval -f $PATH_TO_KERNEL_FILE -o out.json -ds tbg
     result=${PATH_TO_KERNEL_FILE:0:${#PATH_TO_KERNEL_FILE}-5}
     suffix1="/out.json"
     suffix2="_perf_0.json"
