@@ -9,6 +9,13 @@
 pip install geak-eval
 ```
 
+after your installation, run below and **ensure the version is 0.1.4**
+
+```bash
+pip list | grep geak-eval
+geak-eval               0.1.4
+```
+
 ## Run benchmark
 
 **I suggest run benchmark first and then submit results in next section**
@@ -31,6 +38,11 @@ when the benchmark performance done, **by default, you can find a folder named `
 * `out.json_all_passes.json`: precise test log
 * `out.json_perf_0.json`: **performance result**
 * `out.jsonpassk.txt`: ratio that pass all the unit tests
+
+### Tips
+
+There might be a big challenge, sometimes although you see the log message saying **both call status and exec status are true** when you benchmark, like below picture, but there are no perf data of them in `exec/gen_perf`(you can check log under `exec/gen_perf` to find the details) . That means, the generated kernels are not correct. This is because of the limited test units. So the call status and exec status are only for a reference, not the groudtruth. The solution is you can compare the baseline code in agent and generated code or use other methods to find the error and fix it.
+<img width="577" height="34" alt="image" src="https://github.com/user-attachments/assets/3168585c-fcac-49ca-94a4-49a9b477399c" />
 
 ## Submit to leaderboard
 
