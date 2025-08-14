@@ -65,7 +65,9 @@ while the kernel is generating, you will see the info like below picture
 
 <img width="1140" height="761" alt="image" src="https://github.com/user-attachments/assets/eb1ca954-20ae-4497-8ec2-2f95c0891e4b" />
 
-and when the program done, by default you will see the output files including generated kernels under `/workspace` like `reflexion_oneshot_tritonbench_0.json` where `0` represent the kernels generated in iteration 0
+and when the program done, by default you will see the output files including generated kernels under `/workspace` like `reflexion_oneshot_tritonbench_0.json` where `0` represent the kernels generated in iteration 0. That's the input file of benchmarking next step.
+
+and you can easily see the generated triton kernel file in `/workspace/hackathon_agent/src/temp` folder
 
 ## VS Code usage
 
