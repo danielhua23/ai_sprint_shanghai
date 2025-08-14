@@ -41,9 +41,13 @@ when the benchmark performance done, **by default, you can find a folder named `
 
 ### Tips
 
-There might be a big challenge, sometimes although you see the log message saying **both call status and exec status are true** when you benchmark, like below picture, but there are no perf data of them in `exec/gen_perf`(you can check log under `exec/gen_perf` to find the details) . That means, the generated kernels reach the perf that exceeds the roofline, which is obviously incorrect. It's the limited test units that cause the unrobust kernels pass the test. So the call status and exec status are only for a reference, not the groudtruth. The solution is you can compare the baseline code in agent and generated code or use other methods to find the error and fix it.
+We left a big challenge for you, sometimes although you see the log message saying **both call status and exec status are true** when you benchmark, like below picture, but there are no perf data of them in `exec/gen_perf`(you can check log under `exec/gen_perf` to find the details) . That means, the generated kernels reach the perf that exceeds the roofline, which is obviously incorrect. It's the limited test units that cause the unrobust kernels pass the test. So the call status and exec status are only for a reference, not the groudtruth. The solution is you can compare the baseline code in agent and generated code or use other methods to find the error and fix it.
 
-<img width="577" height="34" alt="image" src="https://github.com/user-attachments/assets/3168585c-fcac-49ca-94a4-49a9b477399c" />
+<img width="1232" height="38" alt="image" src="https://github.com/user-attachments/assets/b6b94fe3-8627-4ec0-becf-1e8207b753f1" />
+
+And this kind of kernel, you can see the log like:
+
+<img width="967" height="106" alt="image" src="https://github.com/user-attachments/assets/f36b1469-2cd1-4b68-a7b3-1a55dcdda5f7" />
 
 ## Submit to leaderboard
 
