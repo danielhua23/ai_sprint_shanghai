@@ -22,9 +22,6 @@ fi
 
 
 if [ $1 == "perf" ] || [ $1 == "submit" ]; then
-    do
-	sleep 1
-    done
     echo "INFO: perf"
     date=$(date +'%b%d_%H_%M_%S')
     if [ ! -z "$PATH_TO_KERNEL_FILE" ]; then
