@@ -33,7 +33,7 @@ when the benchmark performance done, **by default, you can find a folder named `
 
 * `exec/gen_perf`: performance result and execution logs of kernels that pass all the unit tests
 * `exec/performance_analysis.txt`: performance analysis of kernels that pass all the unit tests
-* `exec/*.py`: generated kernels
+* `exec/*.py`: generated kernels with perf test case
 * `out.json or out.json_results_0.json`: detailed test log
 * `out.json_all_passes.json`: precise test log
 * `out.json_perf_0.json`: **performance result**
