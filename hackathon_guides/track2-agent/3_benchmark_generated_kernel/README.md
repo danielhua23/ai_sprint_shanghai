@@ -31,8 +31,8 @@ when the benchmark performance done, **by default, you can find a folder named `
 
 <img width="959" height="359" alt="image" src="https://github.com/user-attachments/assets/910a1cf7-f2b0-4090-9ffa-0ec20b51007e" />
 
-* `exec/gen_perf`: performance result and execution logs of kernels that pass all the unit tests
-* `exec/performance_analysis.txt`: performance analysis of kernels that pass all the unit tests
+* `exec/gen_perf`: performance result and execution logs of kernels
+* `exec/performance_analysis.txt`: performance analysis of kernels
 * `exec/*.py`: generated kernels with perf test case
 * `out.json or out.json_results_0.json`: detailed test log
 * `out.json_all_passes.json`: precise test log
