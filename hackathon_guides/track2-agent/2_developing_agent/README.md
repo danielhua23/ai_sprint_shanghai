@@ -49,12 +49,14 @@ Once in the container, you can run the kernel agent by below steps
    cd src
    ```
 
-3. edit config file. You need to give your API key from [1_get_apikey_from_wisemodel](https://github.com/danielhua23/ai_sprint_shanghai/tree/main/hackathon_guides/track2-agent/1_get_apikey_from_wisemodel) into your config file. <u>**⚠Important!!!: since the time that agent run 1 iteration is about 5-7 mins, so we constrained the max_iteration = 5 in the config for simplicity, you don't have to modify it**</u>
+3. edit config file. You need to give your API key from [1_get_apikey_from_wisemodel](https://github.com/danielhua23/ai_sprint_shanghai/tree/main/hackathon_guides/track2-agent/1_get_apikey_from_wisemodel) into your config file.
+
+   <u>**⚠⚠Important!!!: since the time that agent run 1 iteration is about 5-7 mins, so we constrained the max_iteration = 5 in the config for simplicity, you don't have to modify it**</u>
    ```
    vi configs/tritonbench_oneshot_config.yaml
    ```
    
-4. kernel generation
+5. kernel generation
    ```
    python main_reflexion_oneshot.py
    ```
