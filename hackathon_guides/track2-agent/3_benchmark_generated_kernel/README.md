@@ -32,6 +32,8 @@ clarify some output metrics:
 * The **Call Accuracy** says the ratio of kernels generated compiling correctly
 * The **Exec Accuracy** says the ratio of kernels generated executing the same result as the internal test units, but which is not indicating the kernel is right. see Tips in next section.
 
+<img width="589" height="43" alt="image" src="https://github.com/user-attachments/assets/5dc1d8c3-25a8-446c-8e07-17a7cea59647" />
+
 when the benchmark performance done, **by default, you can find a folder named `reflexion_oneshot_tritonbench_1` which include some files and folders like below**
 
 <img width="959" height="359" alt="image" src="https://github.com/user-attachments/assets/910a1cf7-f2b0-4090-9ffa-0ec20b51007e" />
