@@ -29,12 +29,10 @@ export PATH_TO_KERNEL_FILE=<your_generated_kernel_file>
 * `PATH_TO_KERNEL_FILE` is the `output_file` used to store kernels agent generated, which is specified in the config file by default. for example, `export PATH_TO_KERNEL_FILE="reflexion_oneshot_tritonbench_1.json" ` where `1` in the cmd means you are benchmarking the 1st iter result. we suggest you input the biggest iteration file
 
 clarify some output metrics:
-* The Call Accuracy says the ratio of kernels generated compiling correctly
-* The Exec Accuracy says the ratio of kernels generated executing the same result as the internal test units, but which is not indicating the kernel is right. see Tips in next section.
+* The **Call Accuracy** says the ratio of kernels generated compiling correctly
+* The **Exec Accuracy** says the ratio of kernels generated executing the same result as the internal test units, but which is not indicating the kernel is right. see Tips in next section.
 
 when the benchmark performance done, **by default, you can find a folder named `reflexion_oneshot_tritonbench_1` which include some files and folders like below**
-
-<img width="1089" height="155" alt="image" src="https://github.com/user-attachments/assets/0847d3f5-087b-4606-9975-8980bbe79225" />
 
 <img width="959" height="359" alt="image" src="https://github.com/user-attachments/assets/910a1cf7-f2b0-4090-9ffa-0ec20b51007e" />
 
@@ -46,8 +44,10 @@ when the benchmark performance done, **by default, you can find a folder named `
 * `out.json_perf_0.json`: **performance result**
 * `out.jsonpassk.txt`: ratio that pass all the unit tests
 
-This will show you the results you get above and submit them to a leaderboard. The leaderboard is hosted 
-as a Huggingface 🤗 space and is available at [https://daniehua-agent-leaderboard.hf.space/](https://daniehua-agent-leaderboard.hf.space/).
+And you can see your scores at [https://daniehua-agent-leaderboard.hf.space/](https://daniehua-agent-leaderboard.hf.space/)
+
+<img width="1089" height="155" alt="image" src="https://github.com/user-attachments/assets/0847d3f5-087b-4606-9975-8980bbe79225" />
+
 
 ### Tips
 
