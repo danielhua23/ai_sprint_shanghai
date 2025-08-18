@@ -13,16 +13,15 @@ after your installation, run below and **ensure the version is 0.1.4**
 
 ```bash
 pip list | grep geak-eval
-geak-eval               0.1.4
+geak-eval               0.1.5
 ```
 
-## Run benchmark
-
-**I suggest run benchmark first and then submit results in next section**
+## Run benchmark And submit result
 
 ```bash
 cd /workspace
-export PATH_TO_KERNEL_FILE="your_generated_kernel_file"
+export TEAM_NAME=<custom_team_name>
+export PATH_TO_KERNEL_FILE=<your_generated_kernel_file>
 ./1_bench.sh perf 
 ```
 * `PATH_TO_KERNEL_FILE` is the `output_file` used to store kernels agent generated, which is specified in the config file by default. for example, `export PATH_TO_KERNEL_FILE="reflexion_oneshot_tritonbench_1.json" ` where `1` in the cmd means you are benchmarking the 1st iter result. we suggest you input the biggest iteration file
@@ -39,6 +38,11 @@ when the benchmark performance done, **by default, you can find a folder named `
 * `out.json_perf_0.json`: **performance result**
 * `out.jsonpassk.txt`: ratio that pass all the unit tests
 
+**we suggest the `PATH_TO_KERNEL_FILE` should be under `/workspace`**
+
+This will show you the results you get above and submit them to a leaderboard. The leaderboard is hosted 
+as a Huggingface 🤗 space and is available at [https://daniehua-agent-leaderboard.hf.space/](https://daniehua-agent-leaderboard.hf.space/).
+
 ### Tips
 
 We left a big challenge for you, sometimes although you see the log message saying **both call status and exec status are true** when you benchmark, like below picture, but there are no perf data of them in `exec/gen_perf`(you can check log under `exec/gen_perf` to find the details) . That means, the generated kernels reach the perf that exceeds the roofline, which is obviously incorrect. It's the limited test units that cause the unrobust kernels pass the test. So the call status and exec status are only for a reference, not the groudtruth. The solution is you can compare the baseline code in agent and generated code or use other methods to find the error and fix it.
@@ -48,18 +52,6 @@ We left a big challenge for you, sometimes although you see the log message sayi
 And this kind of kernel, you can see the log like:
 
 <img width="967" height="106" alt="image" src="https://github.com/user-attachments/assets/f36b1469-2cd1-4b68-a7b3-1a55dcdda5f7" />
-
-## Submit to leaderboard
-
-```bash
-cd /workspace
-export PATH_TO_KERNEL_FILE="your_generated_kernel_file"
-./1_bench.sh submit your_team_name
-```
-**we suggest the `PATH_TO_KERNEL_FILE` should be under `/workspace`**
-
-This will show you the results you get above and submit them to a leaderboard. The leaderboard is hosted 
-as a Huggingface 🤗 space and is available at [https://daniehua-agent-leaderboard.hf.space/](https://daniehua-agent-leaderboard.hf.space/).
 
 ## submit your code to repo for review
 
