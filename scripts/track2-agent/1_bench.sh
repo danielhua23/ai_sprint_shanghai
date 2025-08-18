@@ -13,7 +13,7 @@ if [ $1 == "perf" ] || [ $1 == "submit" ]; then
         TEAM_NAME="$TEAM_NAME"
     else
         echo "ERROR: Team name required for submit mode"
-        echo "Usage: ./1_bench.sh submit <team_name>" 
+        echo "Usage: ./1_bench.sh perf <team_name>" 
         echo "Or ./1_bench.sh submit <team_name>"
         echo "Or set TEAM_NAME environment variable"
         exit 1
