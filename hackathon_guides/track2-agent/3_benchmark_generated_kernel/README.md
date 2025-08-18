@@ -9,7 +9,7 @@
 pip install geak-eval
 ```
 
-after your installation, run below and **ensure the version is 0.1.4**
+after your installation, run below and **ensure the version is 0.1.5**
 
 ```bash
 pip list | grep geak-eval
@@ -28,7 +28,13 @@ export PATH_TO_KERNEL_FILE=<your_generated_kernel_file>
 ```
 * `PATH_TO_KERNEL_FILE` is the `output_file` used to store kernels agent generated, which is specified in the config file by default. for example, `export PATH_TO_KERNEL_FILE="reflexion_oneshot_tritonbench_1.json" ` where `1` in the cmd means you are benchmarking the 1st iter result. we suggest you input the biggest iteration file
 
+clarify some output metrics:
+* The Call Accuracy says the ratio of kernels generated compiling correctly
+* The Exec Accuracy says the ratio of kernels generated executing the same result as the internal test units, but which is not indicating the kernel is right. see Tips in next section.
+
 when the benchmark performance done, **by default, you can find a folder named `reflexion_oneshot_tritonbench_1` which include some files and folders like below**
+
+<img width="1089" height="155" alt="image" src="https://github.com/user-attachments/assets/0847d3f5-087b-4606-9975-8980bbe79225" />
 
 <img width="959" height="359" alt="image" src="https://github.com/user-attachments/assets/910a1cf7-f2b0-4090-9ffa-0ec20b51007e" />
 
@@ -45,7 +51,7 @@ as a Huggingface 🤗 space and is available at [https://daniehua-agent-leaderbo
 
 ### Tips
 
-We left a big challenge for you, sometimes although you see the log message saying **both call status and exec status are true** when you benchmark, like below picture, but there are no perf data of them in `exec/gen_perf`(you can check log under `exec/gen_perf` to find the details) . That means, the generated kernels reach the perf that exceeds the roofline, which is obviously incorrect. It's the limited test units that cause the unrobust kernels pass the test. So the call status and exec status are only for a reference, not the groudtruth. The solution is you can compare the baseline code in agent and generated code or use other methods to find the error and fix it.
+We left a challenge for you, sometimes although you see the log message saying **both call status and exec status are true** when you benchmark, like below picture, but there are no perf data of them in `exec/gen_perf`(you can check log under `exec/gen_perf` to find the details) . That means, the generated kernels reach the perf that exceeds the roofline, which is obviously incorrect. It's the limited test units that cause the unrobust kernels pass the test. So the call status and exec status are only for a reference, not the groudtruth. The solution is you can compare the baseline code in agent and generated code or use other methods to find the error and fix it.
 
 <img width="1232" height="38" alt="image" src="https://github.com/user-attachments/assets/b6b94fe3-8627-4ec0-becf-1e8207b753f1" />
 
