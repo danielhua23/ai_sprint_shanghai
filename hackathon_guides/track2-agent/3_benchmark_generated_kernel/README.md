@@ -72,7 +72,8 @@ git status
 ```
 
 * step2: using git add to pick your files for our review
-    * agent code 
+    * agent code
+    * agent-generated kernels file (.json) that matches your submissiong score. like `reflexion_oneshot_tritonbench_4.json`
     * outputs folder like `/workspace/reflexion_oneshot_tritonbench_9` including generated kernels whose performance is the best. 
     * performance file, like `reflexion_oneshot_tritonbench_9_out.json_perf_0.json`
 
