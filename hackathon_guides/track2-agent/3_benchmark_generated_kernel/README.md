@@ -18,6 +18,8 @@ geak-eval               0.1.5
 
 ## Run benchmark And submit result
 
+**we suggest the `PATH_TO_KERNEL_FILE` better be under `/workspace`**
+
 ```bash
 cd /workspace
 export TEAM_NAME=<custom_team_name>
@@ -37,8 +39,6 @@ when the benchmark performance done, **by default, you can find a folder named `
 * `out.json_all_passes.json`: precise test log
 * `out.json_perf_0.json`: **performance result**
 * `out.jsonpassk.txt`: ratio that pass all the unit tests
-
-**we suggest the `PATH_TO_KERNEL_FILE` should be under `/workspace`**
 
 This will show you the results you get above and submit them to a leaderboard. The leaderboard is hosted 
 as a Huggingface 🤗 space and is available at [https://daniehua-agent-leaderboard.hf.space/](https://daniehua-agent-leaderboard.hf.space/).
