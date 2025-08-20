@@ -65,6 +65,8 @@ And this kind of kernel, you can see the log like:
 
 before deadline, you must submit your modification to repo by creating a Pull Requests, following below steps
 
+* step0: ensure you are under your forked repo
+
 * step1: using git status see the files you changed
 
 ```bash
