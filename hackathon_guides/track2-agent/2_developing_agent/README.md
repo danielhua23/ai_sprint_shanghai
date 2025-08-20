@@ -10,10 +10,12 @@ git clone https://github.com/danielhua23/ai_sprint_shanghai
 cd ai_sprint_shanghai/scripts/track2-agent
 ```
 
-## Clone kernel agent for local development in the devcloud VM
+## fork kernel agent repo to your own for local development in the AMD devcloud GPU
+
+fork https://github.com/danielhua23/hackathon-agent to your own and run below cmd:
 
 ```bash
-git clone https://github.com/danielhua23/hackathon-agent 
+git clone https://github.com/your_github_name/hackathon-agent 
 ```
 
 ## Start the kernel agent development and evaluation docker container
