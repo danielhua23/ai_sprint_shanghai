@@ -95,6 +95,6 @@ git commit -m "your_team_name"
 git push
 ```
 
-* step5: create a Pull Request
+* step5: create a Pull Request to danielhua23/hackathon_agent
 
 Now, once you run `git push` successfully, you will see the create pull request button at the main page of repo, click it to submit a Pull Request
