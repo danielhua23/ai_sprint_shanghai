@@ -38,7 +38,7 @@ Once in the container, you can run the kernel agent by below steps
 0. check in a new branch(important)
    ```
    cd /hackathon-agent
-   git checkout -b your_branch_name
+   git checkout -b your_branch_name # branch name better align with your team name
    ```
 
 1. prepare the environment
