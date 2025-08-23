@@ -3,7 +3,7 @@
 ## ⭐ Step 0
 - Login to the dev cloud
   
-https://amd.digitalocean.com/
+https://amd.digitalocean.com/partnerships/amd/campaigns/6c80e114-4a66-407c-9bef-8d9a6c485ef6?activation_redirect=http
 
 ## ⭐ Step 1
 - Click GPU Droplets
