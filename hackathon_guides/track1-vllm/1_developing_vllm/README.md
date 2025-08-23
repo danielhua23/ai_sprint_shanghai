@@ -36,6 +36,7 @@ Once in the container, you can run
 
 ```bash
 cd /vllm-dev
+git reset --hard b6d7d34fc62947eadf9adcfbc0264da388cb830c # fall back to b6d7d34 for development since official newest vllm is incompatiable with rocm 
 pip uninstall -y vllm
 pip install --upgrade numba \
     scipy \
@@ -50,6 +51,8 @@ python3 setup.py develop
 ```
 
 to install your editable vLLM version. Modifications done from the VM on vLLM's Python source code will then be immediately be visible in the container, and when rerunning `vllm serve`, or `1_bench.sh` and `2_profile` scripts.
+
+> Note: !!!since you have fall back to commit id b6d7d34, you can't copy the implementation between commit id b6d7d34 and newest vllm commit
 
 > Note: if you have already run setup.py to install vllm, and want to reinstall it to enable your C++ code changes, remember to remove `build` and `vllm.egg-info` under vllm root dir, then run `python setup.py clean`
 
